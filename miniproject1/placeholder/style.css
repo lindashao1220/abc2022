@@ -1,0 +1,11 @@
+span{
+  position: relative;
+  transition:2s;
+  display: inline-block;
+    font-family: monospace;
+    font-weight: bold;
+    color:rgb(64, 174, 73);
+}
+
+
+
