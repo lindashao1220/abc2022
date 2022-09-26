@@ -36,6 +36,7 @@ function greenLight(){
           let interval = setInterval(()=>{
             x+= 30 - (Math.random(10));
             if(x > sw-200){
+              //alert("stop walking")
               clearInterval(interval);
               win.close();
               console.log("1");
