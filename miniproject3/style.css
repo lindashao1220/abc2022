@@ -8,7 +8,7 @@ body{
     min-height:  100vh;
 }
 
-.box-3:hover{
+.box-1:hover{
     animation-name: mixAnimation;
     animation-duration: 1s;
     animation-iteration-count: 1;
@@ -20,20 +20,20 @@ body{
        transform: rotate(0deg);
     }
     25%{
-        transform: rotate(-100deg);
+        transform: rotate(100deg);
     }
     50%{
-        transform: rotate(-180deg);
+        transform: rotate(180deg);
      }
     75%{
-       transform: rotate(-100deg);
+       transform: rotate(100deg);
     }
     100%{
         transform: rotate(0deg);
      }
     }
 
-.box-1:hover{
+.box-3:hover{
       position: relative;
       text-align: center;
       animation: stretch 1s 15;
@@ -81,7 +81,7 @@ h1:hover div:nth-child(1){
 }
 
 h1:hover div:nth-child(1):after{
-    content:"nteractive "
+    content:"heng"
 
 }
 
@@ -90,7 +90,7 @@ h1:hover div:nth-child(2){
 
 }
 h1:hover div:nth-child(2):after{
-    content:"edia "
+    content:"u"
 
 }
 
@@ -99,7 +99,7 @@ h1:hover div:nth-child(3){
  
  }
  h1:hover div:nth-child(3):after{
-     content:"rt"
+     content:"ity"
  }
 
 h1:hover div{
