@@ -117,6 +117,155 @@ h1:hover div{
   }
   .wrapper:hover,
   .wrapper:focus {
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
+
+  .chengdu{
+   position: relative;
+   left:50%;
+   text-align: center;
+   animation: move1 4s, bounce 4s;
+   animation-fill-mode: forwards;
+   animation-timing-function: ease;
+  }
+
+  .hotpot{
+    position: relative;
+    text-align: center;
+    animation: move2 4s, stop 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+  }
+
+  .panda{
+    position: relative;
+    text-align: center;
+    animation: move3 3s, bounce1 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+  }
+
+
+  @keyframes move1{
+    from{
+      left:1000%;
+    }
+    to{
+      left:30%;
+    }
+  }
+
+  @keyframes bounce{
+    0%{
+      transform: scale(1,1)
+      translateY(0);
+    }
+    10%{
+      transform: scale(1.1,0.9)
+      translateY(0);
+    }
+    50%{
+      transform: scale(0.6,1.3)
+      translateY(200px);
+    }
+    70%{
+      transform: scale(1.4,.0.8)
+      translateY(0);
+    }
+    80%{
+      transform: scale(1,1)
+      translateY(8px);
+    }
+    100%{
+      transform: scale(1,1)
+      translateY(0);
+    }
+    }
+
+    @keyframes move2{
+      0%{
+        left:20%;
+      }
+      40%{
+        left:400%;
+      }
+      100%{
+        left:20%;
+      }
+    }
+
+    @keyframes stop{
+      0%{
+        transform: scale(0.5,0.5)
+      }
+      50%{
+        transform: scale(0.7,0.7)
+      }
+      70%{
+        transform: scale(0.8,0.8)
+
+      }
+      99%{
+        transform: scale(0.9,0.9)
+      }
+      100%{
+        transform: scale(1,1)
+      }
+      }
+
+    
+      /* @keyframes stop{
+        from{
+          right:1000%;
+        }
+        to{
+          right:800%;
+        }
+      } */
+  
+      @keyframes move3{
+        from{
+          right:200%;
+        }
+        to{
+          right:35%;
+        }
+      }
+  
+      @keyframes bounce1 {
+
+        0%{
+          transform: scale(1,1)
+          translateY(0);
+        }
+        10%{
+          transform: scale(1.1,.9)
+          translateY(0);
+        }
+        30%{
+          transform: scale(.9,1.1)
+          translateY(-200px);
+        }
+        50%{
+          transform: scale(1.05,.95)
+          translateY(0);
+        }
+        57%{
+          transform: scale(1,1)
+          translateY(-7px);
+        }
+        64%{
+          transform: scale(1,1)
+          translateY(0);
+        }
+        100%{
+          transform: scale(1,1)
+          translateY(0);
+        }
+      
+      }
+    
+
+   
   
