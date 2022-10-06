@@ -16,7 +16,9 @@ if(window.mobileAndTabletcheck()){
 
 let btn = document.getElementById("button")
 function permission () {
-    document.getElementById('doeSupported').innerText = 'asking';
+  alert("pemrisiosin")
+
+    // document.getElementById('doeSupported').innerText = 'asking';
     if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
         // (optional) Do something before API request prompt.
         DeviceMotionEvent.requestPermission()
@@ -24,6 +26,7 @@ function permission () {
             // (optional) Do something after API prompt dismissed.
             if ( response == "granted" ) {
               //we have access to hyroscope
+              alert("works")
 
             }
         })
