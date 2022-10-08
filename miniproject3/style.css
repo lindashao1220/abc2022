@@ -133,7 +133,8 @@ h1:hover div{
     position: relative;
     text-align: center;
     animation: move2 5.5s, stop 5.5s;
-    animation-fill-mode: forwards;
+    animation-delay: 4s;
+    animation-fill-mode:both;
     animation-timing-function: ease;
   }
 
@@ -184,10 +185,10 @@ h1:hover div{
 
     @keyframes move2{
       from{
-        left:20000%;
+        left: 600px;
       }
       to{
-        left: 20%;
+        left:20px;
       }
     }
 
