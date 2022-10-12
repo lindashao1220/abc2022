@@ -13,6 +13,8 @@ let xPos3 = ranX1 + 80;
 let xPos4 = ranX1 - 50;
 let y = sh;
 
+var audio = new Audio('firework.mp3');
+
 //let windowNames = ["popup0/index.html", "popup1/index.html", "popup2/index.html", "popup3/index.html"];
 // let xPos = [20,220,340,700,800,100];
 // let yPos = [20,220,340,400,500,100];
@@ -46,6 +48,7 @@ function topStar(){
         openMoreWindow2();
         openMoreWindow3();
         openMoreWindow4();
+        audio.play();
       }else{
         Win.moveTo(ranX1, y);
       }

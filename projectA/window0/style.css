@@ -1,12 +1,24 @@
-.image1{
-    transition: opacity 0.3s;
-    opacity: 1;
-    animation:fade 3s forwards;  
-  }
-  
-  @keyframes fade{
+
+    .image1{
+        position:relative;
+        animation-name: fade;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+    }
     
-    to{
-    background-color:rgba(255, 255,255,1);
+    @keyframes fade{
+        0%{
+           opacity:1;
+        }
+        55%{
+            opacity:1;
+         }
+        80%{
+            opacity:0.5;
+         }
+        100%{
+            opacity:0;
+        }
+    
     }
     

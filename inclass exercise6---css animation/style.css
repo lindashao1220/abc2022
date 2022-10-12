@@ -24,7 +24,7 @@
 .box-2{
     animation-name: shrink;
     animation-duration: 2s;
-    /* animation-fill-mode: forwards; */
+     animation-fill-mode: forwards; 
     animation-iteration-count: infinite;
 
 }
