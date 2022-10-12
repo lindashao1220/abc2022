@@ -100,10 +100,6 @@ function openMoreWindow1(){
 
   win0.addEventListener("load",()=>{
     let countedInterval = setInterval(()=>{
-    // console.log(intervalCount)
-    // let minus = Math.sin(intervalCount * 100);
-    // let height = screen.height;
-    // let pos1 = height - minus;
     let radius = 400;
     let x = radius * Math.cos(angle) + screen.width - 300;
     let y = radius * Math.sin(angle) + screen.height - 300;
@@ -123,7 +119,7 @@ function openMoreWindow1(){
 }
 
 function openMoreWindow2(){
-  let win1 = window.open("window1/index.html", "", "width=40, height=40, left=700, top=500");
+  let win1 = window.open("window1/index.html", "", "width=40, height=40, left=700, top=650");
   // console.log(win1.screenLeft)
 
   let intervalCount = 0;
@@ -149,6 +145,8 @@ win1.addEventListener("load",()=>{
 }, 400)
 })
 }
+
+
 
 //up and down firework
 // function openMoreWindow1(){
