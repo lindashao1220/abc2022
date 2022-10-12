@@ -185,7 +185,7 @@ h1:hover div{
 
     @keyframes move2{
       from{
-        left: 600px;
+        left: 900px;
       }
       to{
         left:20px;

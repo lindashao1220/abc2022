@@ -1,0 +1,12 @@
+.image1{
+    transition: opacity 0.3s;
+    opacity: 1;
+    animation:fade 3s forwards;  
+  }
+  
+  @keyframes fade{
+    
+    to{
+    background-color:rgba(255, 255,255,1);
+    }
+    
