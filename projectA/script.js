@@ -44,6 +44,8 @@ function topStar(){
         Win.close();
         openMoreWindow1();
         openMoreWindow2();
+        openMoreWindow3();
+        openMoreWindow4();
       }else{
         Win.moveTo(ranX1, y);
       }
@@ -93,8 +95,6 @@ function openMoreWindow(){
 function openMoreWindow1(){
   let win0 = window.open("window0/index.html", "", "width=40, height=40, left=700, top=500");
   // console.log(win0.screenLeft)
-  // let win2 = window.open("window2/index.html", "", "width=40, height=40, left="+xPos4+", top="+2);
-  // let win3 = window.open("window3/index.html", "", "width=40, height=40, left="+xPos4+", top="+190);
   let intervalCount = 0;
   let angle = Math.PI;
 
@@ -130,7 +130,7 @@ win1.addEventListener("load",()=>{
   // console.log(intervalCount); 
   let radius = 400;
   let x = radius * Math.cos(angle1) + screen.width - 300 - radius;
-  let y = radius * Math.sin(angle1) + screen.height - 300 + radius;
+  let y = radius * Math.sin(angle1) + screen.height - 300 + radius + 100;
   console.log(win1.screenLeft)
   // console.log("2",x,y); 
   if(intervalCount > 4){
@@ -142,6 +142,57 @@ win1.addEventListener("load",()=>{
   }
   intervalCount++;
   angle1 = angle1 + Math.PI/14;
+}, 400)
+})
+}
+
+function openMoreWindow3(){
+  let win2 = window.open("window2/index.html", "", "width=40, height=40, left=570, top=500");
+  let intervalCount = 0;
+  let angle2 = 2*Math.PI;
+
+win2.addEventListener("load",()=>{
+  let countedInterval = setInterval(()=>{
+  // console.log(intervalCount); 
+  let radius = 400;
+  let x = radius * Math.cos(angle2) + screen.width - 300 - 2 * radius -100;
+  let y = radius * Math.sin(angle2) + screen.height - 300 ;
+  console.log(win2.screenLeft);
+  // console.log("2",x,y); 
+  if(intervalCount > 11){
+    clearInterval(countedInterval);
+    win2.close();
+  }else{
+    win2.moveTo(x , y);
+  }
+  intervalCount++;
+  angle2 = angle2 - Math.PI/14;
+}, 400)
+
+})
+}
+
+function openMoreWindow4(){
+  let win3 = window.open("window3/index.html", "", "width=40, height=40, left=570, top=650");
+  let intervalCount = 0;
+  let angle3 = 3*Math.PI/2;
+
+win3.addEventListener("load",()=>{
+  let countedInterval = setInterval(()=>{
+  // console.log(intervalCount); 
+  let radius = 400;
+  let x = radius * Math.cos(angle3) + screen.width - 300 - radius -100;
+  let y = radius * Math.sin(angle3) + screen.height - 300 + radius;
+  console.log(win3.screenLeft);
+  // console.log("2",x,y); 
+  if(intervalCount > 4){
+    clearInterval(countedInterval);
+    win3.close();
+  }else{
+    win3.moveTo(x , y);
+  }
+  intervalCount++;
+  angle3 = angle3 - Math.PI/14;
 }, 400)
 })
 }
