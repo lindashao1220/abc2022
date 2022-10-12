@@ -17,7 +17,7 @@ let y = sh;
 // let xPos = [20,220,340,700,800,100];
 // let yPos = [20,220,340,400,500,100];
 
-alert("Hello! Firework is coming:)");
+//alert("Hello! Firework is coming:)");
 
 function topStar(){
   let win = window.open("star", "_blank", "width=30, height=30, top="+y+", left ="+ranX);
@@ -91,7 +91,8 @@ function openMoreWindow(){
   }
 
 function openMoreWindow1(){
-  let win0 = window.open("window0/index.html", "", "width=40, height=40, left="+ranX1+", top="+500);
+  let win0 = window.open("window0/index.html", "", "width=40, height=40, left=700, top=500");
+  // console.log(win0.screenLeft)
   // let win2 = window.open("window2/index.html", "", "width=40, height=40, left="+xPos4+", top="+2);
   // let win3 = window.open("window3/index.html", "", "width=40, height=40, left="+xPos4+", top="+190);
   let intervalCount = 0;
@@ -99,20 +100,21 @@ function openMoreWindow1(){
 
   win0.addEventListener("load",()=>{
     let countedInterval = setInterval(()=>{
-    console.log(intervalCount)
+    // console.log(intervalCount)
     // let minus = Math.sin(intervalCount * 100);
     // let height = screen.height;
     // let pos1 = height - minus;
     let radius = 400;
     let x = radius * Math.cos(angle) + screen.width - 300;
     let y = radius * Math.sin(angle) + screen.height - 300;
-
+    console.log(win0.screenLeft)
+    // console.log("1",x,y); 
     if(intervalCount > 9){
       clearInterval(countedInterval);
       win0.close();
     }else{
       win0.moveTo(x , y);
-       console.log("boom!", intervalCount, x, y);
+      //  console.log("boom!", intervalCount, x, y);
     }
     intervalCount++;
     angle = angle + Math.PI/14;
@@ -121,29 +123,31 @@ function openMoreWindow1(){
 }
 
 function openMoreWindow2(){
-  let win1 = window.open("window1/index.html", "", "width=40, height=40, left="+xPos3+", top="+190);
+  let win1 = window.open("window1/index.html", "", "width=40, height=40, left=700, top=500");
+  // console.log(win1.screenLeft)
+
   let intervalCount = 0;
-  let angle1 = Math.PI/2;
+  let angle1 = -Math.PI/2;
 
 win1.addEventListener("load",()=>{
   let countedInterval = setInterval(()=>{
-  console.log(intervalCount); 
+  // console.log(intervalCount); 
   let radius = 400;
-  let x = radius * Math.cos(angle1) + screen.width - 300;
-  let y = radius * Math.sin(angle1) + screen.height - 300;
-
-  if(intervalCount > 9){
+  let x = radius * Math.cos(angle1) + screen.width - 300 - radius;
+  let y = radius * Math.sin(angle1) + screen.height - 300 + radius;
+  console.log(win1.screenLeft)
+  // console.log("2",x,y); 
+  if(intervalCount > 4){
     clearInterval(countedInterval);
     win1.close();
   }else{
     win1.moveTo(x , y);
-     console.log("boom!", intervalCount, x, y);
+    //  console.log("boom!", intervalCount, x, y);
   }
   intervalCount++;
   angle1 = angle1 + Math.PI/14;
 }, 400)
 })
-
 }
 
 //up and down firework
