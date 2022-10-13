@@ -3,9 +3,7 @@ let button = document.getElementById("button");
 let sw = screen.width;
 let sh = screen.height;
 
-// let ranX = Math.random(0.6,0.7)*sw;
-// let ranX1 = Math.random(0.4,0.45)*sw;
-let ranX = 400;
+let ranX = Math.random(0.1,0.2)*sw;
 let ranX1 = 700;
 let xPos1 = ranX +80;
 let xPos2 = ranX - 50;
@@ -15,16 +13,13 @@ let y = sh;
 
 var audio = new Audio('firework.mp3');
 
-//let windowNames = ["popup0/index.html", "popup1/index.html", "popup2/index.html", "popup3/index.html"];
-// let xPos = [20,220,340,700,800,100];
-// let yPos = [20,220,340,400,500,100];
-
 alert("Hello! Firework is coming:)");
+console.log(ranX);
 
 function topStar(){
   let win = window.open("star", "_blank", "width=30, height=30, top="+y+", left ="+ranX);
   let Win = window.open("star1", "_blank", "width=5, height=250, top="+y+", left ="+ranX1);
-
+  
   win.addEventListener("load", ()=>{
     let interval = setInterval(()=>{
       y-=20;
