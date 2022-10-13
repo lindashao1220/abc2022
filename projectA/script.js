@@ -19,7 +19,7 @@ var audio = new Audio('firework.mp3');
 // let xPos = [20,220,340,700,800,100];
 // let yPos = [20,220,340,400,500,100];
 
-//alert("Hello! Firework is coming:)");
+alert("Hello! Firework is coming:)");
 
 function topStar(){
   let win = window.open("star", "_blank", "width=30, height=30, top="+y+", left ="+ranX);
