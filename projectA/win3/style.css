@@ -1,7 +1,7 @@
 .image4{
     position:relative;
     animation-name: fade;
-    animation-duration: 3s;
+    animation-duration: 6s;
     animation-iteration-count: infinite;
 }
 

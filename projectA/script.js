@@ -5,11 +5,15 @@ let sh = screen.height;
 
 let ranX =  300;
 
-let ranX1 = screen.width * 0.7;
-let ranY1 = screen.height * 0.1;
+let ranX1 = screen.width * 0.6;//Math.random(0.55,0.6);//0.6;
+let ranY1 = screen.height * 0.3;//Math.random(0.2,0.4)//0.3;
 
-let ranX2 = screen.width * 0.4;
-let ranY2 = screen.height * 0.4;
+let ranX2 = screen.width * 0.3;//Math.random(0.55, 0.6);//0.3;
+let ranY2 = screen.height * 0.2;//Math.random(0.2, 0.4)//0.2;
+
+// let ranX3 = screen.width * 0.3;
+// let ranY3 = screen.height * 0.2;
+
 
 let xPos1 = ranX +80;
 let xPos2 = ranX - 50;
@@ -21,7 +25,6 @@ let y = sh;
 var audio = new Audio('firework.mp3');
 
 alert("Hello! Firework is coming:)");
-console.log(sw,sh);
 
 
 function topStar(){
@@ -59,7 +62,6 @@ function topStar(){
       }
     }, 50)
   })
-
 }
 
 // function shootingStars(){
@@ -98,33 +100,35 @@ function openMoreWindow(){
       win1.close();
       win2.close();
       win3.close();
-  }, 4000)
+  }, 400)
   }
 
 function openMoreWindow1(){
-  let win0 = window.open("window0/index.html", "", "width=10, height=10, left="+(ranX1+70)+", top="+(ranY1-70)+"");
-  console.log(win0.screenLeft)
+  let win0 = window.open("window0/index.html", "", "width=40, height=40, left="+(ranX1+70)+", top="+(ranY1-70)+"");
+  //console.log(win0.screenLeft)
   let intervalCount = 0;
   let angle = Math.PI;
 
   win0.addEventListener("load",()=>{
     let countedInterval = setInterval(()=>{
-    let radius = 400;
-    let x = radius * Math.cos(angle) + screen.width - 300;
-    let y = radius * Math.sin(angle) + screen.height - 300 - 850;
-    console.log(win0.screenLeft);
-    // console.log("1",x,y); 
-    if(intervalCount > 9){
-      clearInterval(countedInterval);
-      win0.close();
-    }else{
-      win0.moveTo(x , y);
-      //  console.log("boom!", intervalCount, x, y);
-    }
-    intervalCount++;
-    angle = angle + Math.PI/14;
-  }, 400)
-})
+      let radius = 100;
+
+      let x = radius * Math.cos(angle) + ranX1 + 70 + radius; // + 0.1 * screen.height//+ screen.width - screen.width* 0.7 //- 300;
+      let y = radius * Math.sin(angle) + ranY1 - 70;// + 0.1 * screen.width//+ screen.height   //- 300 - 850;
+
+      //console.log(win0.screenLeft);
+      // console.log("1",x,y); 
+      if(intervalCount > 13){
+        clearInterval(countedInterval);
+        win0.close();
+      }else{
+        win0.moveTo(x , y);
+        //  console.log("boom!", intervalCount, x, y);
+      }
+      intervalCount++;
+      angle = angle + Math.PI/14;
+    }, 400)
+  })
 }
 
 function openMoreWindow2(){
@@ -132,25 +136,26 @@ function openMoreWindow2(){
   // console.log(win1.screenLeft)
 
   let intervalCount = 0;
-  let angle1 = -Math.PI/2;
+  let angle1 = Math.PI;
 
 win1.addEventListener("load",()=>{
   let countedInterval = setInterval(()=>{
   // console.log(intervalCount); 
   let radius = 400;
-  let x = radius * Math.cos(angle1) + screen.width - 300 - radius;
-  let y = radius * Math.sin(angle1) + screen.height - 300 + radius + 100 - 850;
-  console.log(win1.screenLeft)
+  let x = radius * Math.cos(angle1) + ranX1 + 70 + radius;// - 0.1 * screen.width;//+ screen.width // - 300 - radius;
+  let y = radius * Math.sin(angle1) + ranY1 + 70; //+ screen.height //- 300 + radius + 100 - 850;
+  //console.log(x,y);
+  //console.log(win1.screenLeft)
   // console.log("2",x,y); 
   if(intervalCount > 4){
     clearInterval(countedInterval);
     win1.close();
   }else{
     win1.moveTo(x , y);
-    //  console.log("boom!", intervalCount, x, y);
+    //console.log("boom!", intervalCount, x, y);
   }
   intervalCount++;
-  angle1 = angle1 + Math.PI/14;
+  angle1 = angle1 - Math.PI/14;
 }, 400)
 })
 }
@@ -158,15 +163,15 @@ win1.addEventListener("load",()=>{
 function openMoreWindow3(){
   let win2 = window.open("window2/index.html", "", "width=40, height=40, left="+(ranX1-70)+", top="+(ranY1-70)+"");
   let intervalCount = 0;
-  let angle2 = 2*Math.PI;
+  let angle2 = 0;
 
   win2.addEventListener("load",()=>{
     let countedInterval = setInterval(()=>{
     // console.log(intervalCount); 
-    let radius = 400;
-    let x = radius * Math.cos(angle2) + screen.width - 300 - 2 * radius -100;
-    let y = radius * Math.sin(angle2) + screen.height - 300 - 850;
-    console.log(win2.screenLeft);
+    let radius = 200;
+    let x = radius * Math.cos(angle2) + ranX1 - 70 - radius;
+    let y = radius * Math.sin(angle2) + ranY1 - 70; 
+    //console.log(win2.screenLeft);
     // console.log("2",x,y); 
     if(intervalCount > 11){
       clearInterval(countedInterval);
@@ -178,33 +183,32 @@ function openMoreWindow3(){
     intervalCount++;
     angle2 = angle2 - Math.PI/14;
   }, 400)
-
   })
 }
 
 function openMoreWindow4(){
   let win3 = window.open("window3/index.html", "", "width=40, height=40, left="+(ranX1-70)+", top="+(ranY1+70)+"");
   let intervalCount = 0;
-  let angle3 = 3*Math.PI/2;
+  let angle3 = 0;
 
-win3.addEventListener("load",()=>{
-  let countedInterval = setInterval(()=>{
-  // console.log(intervalCount); 
-  let radius = 400;
-  let x = radius * Math.cos(angle3) + screen.width - 300 - radius -100;
-  let y = radius * Math.sin(angle3) + screen.height - 300 + radius - 850;
-  console.log(win3.screenLeft);
-  // console.log("2",x,y); 
-  if(intervalCount > 4){
-    clearInterval(countedInterval);
-    win3.close();
-  }else{
-    win3.moveTo(x , y);
-  }
-  intervalCount++;
-  angle3 = angle3 - Math.PI/14;
-}, 400)
-})
+  win3.addEventListener("load",()=>{
+    let countedInterval = setInterval(()=>{
+    // console.log(intervalCount); 
+    let radius = 400;
+    let x = radius * Math.cos(angle3) + ranX1 - 70 - radius;
+    let y = radius * Math.sin(angle3) + ranY1 + 70;
+    if(intervalCount > 7){
+      clearInterval(countedInterval);
+      win3.close();
+      //topStar2();
+    }else{
+      win3.moveTo(x , y);
+    }
+    intervalCount++;
+    angle3 = angle3 + Math.PI/14;
+  }, 400)
+  })
+
 }
 
 
@@ -215,7 +219,7 @@ function topStar1(){
   Win1.addEventListener("load", ()=>{
     let interval = setInterval(()=>{
       y-=20;
-      if(y < 200){
+      if(y < ranY2){
         clearInterval(interval);
         Win1.close();
         openMoreWindow5();
@@ -231,7 +235,7 @@ function topStar1(){
 }
 
 function openMoreWindow5(){
-  let win0 = window.open("win0/index.html", "", "width=40, height=40, left=550, top=200");
+  let win0 = window.open("win0/index.html", "", "width=40, height=40, left="+(ranX2+70)+", top="+(ranY2-70)+"");
   // console.log(win0.screenLeft)
   let intervalCount = 0;
   let angle = Math.PI;
@@ -239,10 +243,9 @@ function openMoreWindow5(){
   win0.addEventListener("load",()=>{
     let countedInterval = setInterval(()=>{
     let radius = 400;
-    let x = radius * Math.cos(angle) + screen.width - 550 + 400;
-    let y = radius * Math.sin(angle) + screen.height - 650 - 800;
-    console.log(win0.screenLeft)
-    // console.log("1",x,y); 
+    let x = radius * Math.cos(angle) + ranX2 + radius;
+    let y = radius * Math.sin(angle) + ranY2;
+
     if(intervalCount > 9){
       clearInterval(countedInterval);
       win0.close();
@@ -257,21 +260,21 @@ function openMoreWindow5(){
 }
 
 function openMoreWindow6(){
-  let win1 = window.open("win1/index.html", "", "width=40, height=40, left=550, top=350");
+  let win1 = window.open("win1/index.html", "", "width=40, height=40, left="+(ranX2+70)+", top="+(ranY2+70)+"");
   // console.log(win1.screenLeft)
 
   let intervalCount = 0;
-  let angle1 = -Math.PI/2;
+  let angle1 = Math.PI;
 
 win1.addEventListener("load",()=>{
   let countedInterval = setInterval(()=>{
   // console.log(intervalCount); 
-  let radius = 400;
-  let x = radius * Math.cos(angle1) + screen.width - 800 + 400;
-  let y = radius * Math.sin(angle1) + screen.height - 300 - 800;
-  console.log(win1.screenLeft)
+  let radius = 300;
+  let x = radius * Math.cos(angle1) + ranX2 + 70 + radius;
+  let y = radius * Math.sin(angle1) + ranY2 + 70;
+  //console.log(win1.screenLeft)
   // console.log("2",x,y); 
-  if(intervalCount > 9){
+  if(intervalCount > 7){
     clearInterval(countedInterval);
     win1.close();
   }else{
@@ -279,22 +282,21 @@ win1.addEventListener("load",()=>{
     //  console.log("boom!", intervalCount, x, y);
   }
   intervalCount++;
-  angle1 = angle1 + Math.PI/14;
+  angle1 = angle1 - Math.PI/14;
 }, 400)
 })
 }
 
 function openMoreWindow7(){
-  let win2 = window.open("win3/index.html", "", "width=40, height=40, left=400, top=200");
+  let win2 = window.open("win3/index.html", "", "width=40, height=40, left="+(ranX2-70)+", top="+(ranY2-70)+"");
   let intervalCount = 0;
-  let angle2 = 2*Math.PI;
+  let angle2 = 0;
 
 win2.addEventListener("load",()=>{
   let countedInterval = setInterval(()=>{
-  // console.log(intervalCount); 
-  let radius = 400;
-  let x = radius * Math.cos(angle2) + screen.width - 1500 + 400;
-  let y = radius * Math.sin(angle2) + screen.height - 700 -800;
+  let radius = 300;
+  let x = radius * Math.cos(angle2) + ranX2 - 70 - radius;
+  let y = radius * Math.sin(angle2) + + ranY2 - 70;
   console.log(win2.screenLeft);
   // console.log("2",x,y); 
   if(intervalCount > 11){
@@ -311,18 +313,16 @@ win2.addEventListener("load",()=>{
 }
 
 function openMoreWindow8(){
-  let win3 = window.open("win2/index.html", "", "width=40, height=40, left=400, top=350");
+  let win3 = window.open("win2/index.html", "", "width=40, height=40, left="+(ranX2-70)+", top="+(ranY2+70)+"");
   let intervalCount = 0;
-  let angle3 = 3*Math.PI/2;
+  let angle3 = 0;
 
 win3.addEventListener("load",()=>{
   let countedInterval = setInterval(()=>{
   // console.log(intervalCount); 
-  let radius = 400;
-  let x = radius * Math.cos(angle3) + screen.width - 1100 + 400;
-  let y = radius * Math.sin(angle3) + screen.height - 300 - 800;
-  console.log(win3.screenLeft);
-  // console.log("2",x,y); 
+  let radius = 200;
+  let x = radius * Math.cos(angle3) + ranX2 - 70 - radius;
+  let y = radius * Math.sin(angle3) + ranY2 + 70;
   if(intervalCount > 4){
     clearInterval(countedInterval);
     win3.close();
@@ -330,7 +330,7 @@ win3.addEventListener("load",()=>{
     win3.moveTo(x , y);
   }
   intervalCount++;
-  angle3 = angle3 - Math.PI/14;
+  angle3 = angle3 + Math.PI/14;
 }, 400)
 })
 }
