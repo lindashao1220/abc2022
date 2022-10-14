@@ -200,7 +200,7 @@ function openMoreWindow4(){
   win3.addEventListener("load",()=>{
     let countedInterval = setInterval(()=>{
     // console.log(intervalCount); 
-    let radius = 400;
+    let radius = 250;
     let x = radius * Math.cos(angle3) + ranX1 - 70 - radius;
     let y = radius * Math.sin(angle3) + ranY1 + 70;
     if(intervalCount > 7){
