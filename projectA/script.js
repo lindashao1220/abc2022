@@ -106,8 +106,6 @@ button.addEventListener("click", topStar);
     }
     intervalCount++;
   }, 500)
-
-  
   }
   
   
