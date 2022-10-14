@@ -110,36 +110,7 @@ button.addEventListener("click", topStar);
   
   }
   
-// function openMoreWindow(){
-//     let win0 = window.open("popup0/index.html", "", "width=25, height=25, left="+xPos1+", top="+2);
-//     let win1 = window.open("popup1/index.html", "", "width=25, height=25, left="+xPos1+", top="+190);
-//     let win2 = window.open("popup2/index.html", "", "width=25, height=25, left="+xPos2+", top="+2);
-//     let win3 = window.open("popup3/index.html", "", "width=25, height=25, left="+xPos2+", top="+190);
-
-//        //slower down the for loop
-//         const sleep = (time) => {
-//           return new Promise((resolve) => setTimeout(resolve, time))
-//         }
-
-//         const biggerWindow = async () => {
-//           for(let i=0; i<8; i++){
-//           await sleep(500);
-//         win0.resizeBy(3+i*1, 3+1*i);
-//         win1.resizeBy(3+i*1, 3+1*i);
-//         win2.resizeBy(3+i*1, 3+1*i);
-//         win3.resizeBy(3+i*1, 3+1*i);
-//         }
-//       }
-//       setTimeout(biggerWindow(), 4000)
-
-//     setTimeout(function(){
-//       win0.close();
-//       win1.close();
-//       win2.close();
-//       win3.close();
-//   }, 400)
-//   }
-
+  
 function openMoreWindow1(){
   let win0 = window.open("window0/index.html", "", "width=40, height=40, left="+(ranX1+70)+", top="+(ranY1-70)+"");
   //console.log(win0.screenLeft)
