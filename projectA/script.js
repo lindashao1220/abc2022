@@ -79,6 +79,38 @@ Win.addEventListener("load", ()=>{
 // }, 2000)
 
 
+// function openMoreWindow(){
+//   let win0 = window.open("popup0/index.html", "", "width=25, height=25, left="+xPos1+", top="+2);
+//   let win1 = window.open("popup1/index.html", "", "width=25, height=25, left="+xPos1+", top="+190);
+//   let win2 = window.open("popup2/index.html", "", "width=25, height=25, left="+xPos2+", top="+2);
+//   let win3 = window.open("popup3/index.html", "", "width=25, height=25, left="+xPos2+", top="+190);
+
+//   let intervalCount = 0;
+
+//   let countedInterval = setInterval(()=>{
+//   console.log("boom!", intervalCount);
+//   win0.resizeBy(3+intervalCount*1, 3+1*intervalCount);
+//   win1.resizeBy(3+intervalCount*1, 3+1*intervalCount);
+//   win2.resizeBy(3+intervalCount*1, 3+1*intervalCount);
+//   win3.resizeBy(3+intervalCount*1, 3+1*intervalCount);
+
+//   win0.moveTo(xPos1 + 10 * intervalCount, 2 + 10 * intervalCount);
+//   win1.moveTo(xPos1 + 10 * intervalCount, 190 + 10 * intervalCount);
+//   win2.moveTo(xPos2 + 10 * intervalCount, 2 + 10 * intervalCount);
+//   win3.moveTo(xPos2 + 10 * intervalCount, 190 + 10 * intervalCount);
+// }, 500);
+// }
+
+// if(intervalCount > 6){
+//   clearInterval(countedInterval);
+//  win0.close();
+//  win1.close();
+//  win2.close();
+//  win3.close();
+//  }
+//  intervalCount++;
+// }, 500)
+
 function openMoreWindow(){
   let win0 = window.open("popup0/index.html", "", "width=25, height=25, left="+xPos1+", top="+2);
   let win1 = window.open("popup1/index.html", "", "width=25, height=25, left="+xPos1+", top="+190);
@@ -93,6 +125,10 @@ function openMoreWindow(){
   win1.resizeBy(3+intervalCount*1, 3+1*intervalCount);
   win2.resizeBy(3+intervalCount*1, 3+1*intervalCount);
   win3.resizeBy(3+intervalCount*1, 3+1*intervalCount);
+  win0.moveTo(xPos1 + 10 * intervalCount, 2 - 10 * intervalCount);
+  win1.moveTo(xPos1 + 10 * intervalCount, 190 + 10 * intervalCount);
+  win2.moveTo(xPos2 - 10 * intervalCount, 2 - 10 * intervalCount);
+  win3.moveTo(xPos2 - 10 * intervalCount, 190 + 10 * intervalCount);
   if(intervalCount > 6){
    clearInterval(countedInterval);
   win0.close();
@@ -103,6 +139,7 @@ function openMoreWindow(){
   intervalCount++;
 }, 500)
 }
+
 
 
 function openMoreWindow1(){
