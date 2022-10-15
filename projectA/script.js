@@ -38,7 +38,7 @@ win.addEventListener("load", ()=>{
     h-=30;
     if(h < 100){
       clearInterval(interval);
-      Win.close();
+      win.close();
       openMoreWindow();
       audio.play();
     }else{
