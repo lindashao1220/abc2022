@@ -1,6 +1,6 @@
-#FIREWORK
-##Discription
+# FIREWORK
+## Discription
 
-##Changllenges and Solutions
+## Changllenges and Solutions
 
-##Shortcomings and Compromises
+## Shortcomings and Compromises
