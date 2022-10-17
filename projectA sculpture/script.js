@@ -1,3 +1,38 @@
+//performance version
+//not working:(
+// const date = new String(Date());
+// console.log(date.charAt(20)); // Fri Oct 14 2022 21:58:18 GMT+0800 (China Standard Time)\
+// let r = date.charAt(20);
+// let q = date.charAt(22);
+// let k = date.charAt(23);
+
+// setTimeout(function(){
+//   window.location.reload(1);
+// }, 30000);
+
+
+// if (r % 2 == 0 && q == 0 && k == 0){
+//   topStar();
+// console.log(r);
+// }
+
+let prevEventTime;
+let intervalTime = 120; // in seconds
+setInterval(()=>{
+    console.log(Math.floor(Date.now()/1000))
+    let currentSecond = Math.floor(Date.now()/1000)  // since 1970
+    if(currentSecond%100 == 0){
+      topStar();
+        // if(prevEventTime != currentSecond){
+        //     console.log("FIREEEE!")
+        //     prevEventTime = currentSecond;
+        // }
+    }
+}, 1000);
+
+//button.addEventListener("click", topStar);
+
+
 let sw = screen.width;
 let sh = screen.height;
 
@@ -22,8 +57,6 @@ var audio = new Audio('firework.m4a');
 var audio1 = new Audio('firework.mp3');
 
 alert("Hello! Firework is coming:)");
-
-button.addEventListener("click", topStar);
 
 function getRandomArbitrary(min, max) {
 return Math.random() * (max - min) + min;
@@ -505,37 +538,3 @@ win3.addEventListener("load",()=>{
 })
 
 }
-
-
-
-
-
-// let inter;
-// let button = document.getElementById("button");
-// let enough = document.getElementById("enough");
-
-// function shootingStars(){
-//   button.style.display = "none";
-//   enough.style.display = "block";
-
-//   inter = setInterval(()=>{
-//     let ran = Math.random();
-//     if(ran<0.4){
-//       topStar();
-//     }else if (ran>0.5) {
-//       topStar();
-
-//     }
-//   },5000);
-// }
-
-
-// function stop(){
-//   clearInterval(inter);
-//   button.style.display = "block";
-//   enough.style.display = "none";
-// }
-
-
-// button.addEventListener("click", shootingStars);
-// enough.addEventListener("click", stop);
