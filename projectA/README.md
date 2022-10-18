@@ -1,5 +1,7 @@
 # PROJECT A --- FIREWORK🥳
 ## Description🎆 
+![alt text](https://github.com/lindashao1220/abc2022/blob/master/projectA/Screen%20Shot%202022-10-17%20at%2021.39.42.png)
+
 [My project A](https://lindashao1220.github.io/abc2022/projectA%20sculpture/) is a digital firework made of windows and can be played in multiple devices at the same time. I want to make people see the browser window in a different way and enjoy some real things in a virtual way. 
  
 ## Challenges and Solutions🔥
