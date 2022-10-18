@@ -10,5 +10,5 @@ The first challenge for me is to make the windows move in a curving way, and I c
 Thanks for Prof.Leon's help along the way! Always provide the best way dealing all the problems I have🥰
 
 ## Shortcomings and Compromises🎇
-I think the compromises I have made now is I did't succeed making the firework been played at a random time interval:((
+I think the compromises I have made now is I did't succeed making the firework been played at a random time interval:((()
 
