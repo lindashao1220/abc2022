@@ -7,10 +7,9 @@ let findWord = document.getElementById("findword");
 let replaceWord = document.getElementById("replaceword");
 let button = document.getElementById("replaceButton");
 
-
+console.log(tabs[0]);
 // when the button in the popup window is clicked...
 button.addEventListener("click", ()=>{
-
   // we retrieve the values in the text inputs:
   let wordToSearchFor = findWord.value;
   let wordToUseInstead = replaceWord.value;

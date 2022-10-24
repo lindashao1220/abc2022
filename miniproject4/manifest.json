@@ -1,0 +1,23 @@
+{
+    "name": "MINIPROJECT4",
+    "version": "1.0",
+    "description": "if you don't finish reading in 1 minute, the page will automatically scroll up to the very beginning",
+    "manifest_version": 3,
+    "permissions": [
+      "activeTab",
+      "tabs"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentscript.js"]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_icon": "glasses.png",
+      "default_popup": "popup/popup.html"
+    }
+}

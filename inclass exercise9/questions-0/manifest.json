@@ -1,17 +1,17 @@
 {
-    "name": "Replacer (advanced)",
+    "name": "QUESTIONS (advanced)",
     "version": "1.0",
-    "description": "Replace words",
+    "description": "Collecting Questions",
     "manifest_version": 3,
-    "permissions": [
-      "activeTab"
-    ],
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["findAndReplaceDOMText.js", "contentscript.js"]
+        "js": ["contentscript.js"]
       }
     ],
+    "background": {
+      "service_worker": "background.js"
+    },
     "action": {
       "default_icon": "tent.png",
       "default_popup": "popup/popup.html"

@@ -1,8 +1,4 @@
 // https://developer.chrome.com/extensions/messaging
-
-
-
-
 let findWord = document.getElementById("findword");
 let replaceWord = document.getElementById("replaceword");
 let button = document.getElementById("replaceButton");
@@ -10,7 +6,6 @@ let button = document.getElementById("replaceButton");
 
 // when the button in the popup window is clicked...
 button.addEventListener("click", ()=>{
-
   // we retrieve the values in the text inputs:
   let wordToSearchFor = findWord.value;
   let wordToUseInstead = replaceWord.value;
@@ -24,6 +19,9 @@ button.addEventListener("click", ()=>{
     // one window is active and in it only one tab is active at a time.
 
     // the message can be a simple JS object
+
+
+
     let message = {
       find: wordToSearchFor,
       replace: wordToUseInstead

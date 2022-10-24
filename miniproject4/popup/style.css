@@ -3,12 +3,13 @@ input{
 }
 
 body{
-  width:500px;
+  width:80px;
   height: 80px;
   margin:0;
 }
+
 .wrapper{
-  width:500px;
+  width:80px;
   height: 80px;
   display: flex;
   justify-content:center;

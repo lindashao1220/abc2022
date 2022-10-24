@@ -1,13 +1,3 @@
-// make sure the script is injected
-// for this we must adjust the manifest.json file:
-// manifest.json line 6-8:
-//      1) ask for permission: to access the activeTab
-// manifest.json line 9-14:
-//      2) define "matches": which urls should this script be injected to? https://developer.chrome.com/extensions/match_patterns
-//      3) name the script ("contentscript.js") so manifest.json knows where to find it
-//
-
-
 function repl(find, replace){
   // info on the regular expression here: https://www.designcise.com/web/tutorial/how-to-replace-all-occurrences-of-a-word-in-a-javascript-string
   var finder = new RegExp(find,"g");
