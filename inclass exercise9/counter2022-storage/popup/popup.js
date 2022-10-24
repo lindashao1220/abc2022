@@ -1,5 +1,5 @@
-let display = document.getElementById("counterDisplay")
-let button = document.getElementById("up")
+let display = document.getElementById("counterDisplay");
+let button = document.getElementById("up");
 
 let counter = 0;
 button.addEventListener("click", ()=>{
