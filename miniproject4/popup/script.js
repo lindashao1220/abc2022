@@ -19,7 +19,7 @@ function myFunction() {
 }
 timer = window.setInterval(function() {
       myFunction();
-    }, 100);
+    }, 1000);
 
 document.getElementById("timer").innerHTML="1:00"; 
 
