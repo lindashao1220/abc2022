@@ -21,7 +21,7 @@ timer = window.setInterval(function() {
       myFunction();
     }, 1000);
 
-document.getElementById("timer").innerHTML="1:00"; 
+document.getElementById("timer").innerHTML="10 seconds count down"; 
 
 let message = {msg: "here"};
 
