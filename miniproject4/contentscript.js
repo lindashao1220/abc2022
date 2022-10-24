@@ -6,6 +6,10 @@ function rotateWin(){
     document.body.style.transform = "rotate(90deg)";
 }
 
+function back(){
+    document.body.style.transform = "rotate(360deg)";
+}
+
 console.log("hello0000");
 
 function gotMessage(message,sender,sendResponse){
@@ -18,6 +22,10 @@ function gotMessage(message,sender,sendResponse){
       setTimeout(function () {
         rotateWin();
       }, 3000);
+    
+      setTimeout(function () {
+        back();
+      }, 13000);
     
     
 
