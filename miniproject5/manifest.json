@@ -1,0 +1,23 @@
+{
+    "name": "MINIPROJECT5",
+    "version": "1.0",
+    "description": "image search engine",
+    "manifest_version": 3,
+    "permissions": [
+      "activeTab",
+      "tabs"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentscript.js"]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_icon": "donuts.png",
+      "default_popup": "popup/popup.html"
+    }
+}
