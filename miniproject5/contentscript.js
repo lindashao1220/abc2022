@@ -10,7 +10,7 @@ if (string == "https://www.google.com/search?q="){
   console.log("working");
   setTimeout(function () {
     window.scrollTo(0,980);
-  }, 2500);
+  }, 400);
 }
 
 
@@ -41,6 +41,10 @@ function mouseUPP(){
        let win1 = window.open(url, "_blank", "width=500, height=400, top="+300+", left ="+300);
       // win1.location.href = url;
       //  //if 
+
+      setTimeout(function () {
+        win1.close();
+      }, 4000);
   }
 }
 
