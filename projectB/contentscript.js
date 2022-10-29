@@ -8,10 +8,14 @@ $(window).scroll(function (e){
   }
 });
 
+console.log("LindaisHEREEEEE!!!");
 //bounding
 let tags = document.getElementsByTagName("a");
 
+
+
 function scrolled(){
+  console.log("helloooo");
   const getOffset = (el) => {
     const rect = el.getBoundingClientRect();
     return {
@@ -19,7 +23,6 @@ function scrolled(){
       top: rect.top
     };
   }
-  
   // make red 
   for(let i = 0; i < tags.length; i++){
     if(tags[i].textContent != "" && getOffset(tags[i]).top != 0){
@@ -29,17 +32,14 @@ function scrolled(){
   
     if(getOffset(tags[i]).top < 400){
       console.log("i am done!");
-      tags[i].innerHTML = "done"
+      tags[i].innerHTML = "this is done";
     }
   }
-
-setInterval(function(){
-  window.scrollBy(0,2)
-}, 10)
-
-
+  setTimeout(function(){
+  window.scrollBy(0, 2);
+  }, 10)
 }
 
-document.addEventListener('click', scrolled);
 
-
+//document.addEventListener('click', scrolled);
+setInterval(scrolled,100);
