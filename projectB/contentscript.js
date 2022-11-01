@@ -43,3 +43,4 @@ function scrolled(){
 
 //document.addEventListener('click', scrolled);
 setInterval(scrolled,100);
+
