@@ -44,8 +44,11 @@
 var innards = document.body.innerHTML;
 document.body.innerHTML += innards;
 
-
-
+// $(window).scroll(function (e){
+//   if ($(document).height() < $(window).scrollTop() + $(window).height() * 10){
+//     document.body.innerHTML += innards;
+//   }
+// });
 let timeBanner = document.createElement('div');
 timeBanner.setAttribute('id', 'timeBanner');
 document.body.appendChild(timeBanner);
@@ -54,37 +57,76 @@ document.body.appendChild(timeBanner);
 // let node1 = document.createTextNode ("here!!");
 // timeBanner.appendChild(node1);
 
-var seconds = 60;
+var seconds = 70;
 var timer;
 
-function myFunction() {
-  if(seconds < 60){
-   timeBanner.innerHTML = "NOW YOU HAVE "+ seconds +" LEFT";
-    // let node = document.createTextNode ("NOW YOU HAVE "+ seconds +" SECONDS LEFT TO PASS THE GAME");
-    // timeBanner.appendChild(node);
-    console.log("NOW YOU HAVE "+ seconds +" LEFT");
+let intervalCount=0;
+let maxInterval = 20;
+let countedInterval = setInterval(()=>{
+  window.scrollBy(0, intervalCount);
+  console.log("This is", intervalCount);
+   if(intervalCount > maxInterval){
+     clearInterval(countedInterval);
+   }
+   //intervalCount++;
+}, 40)
 
-    console.log(timeBanner);
-  }
-  if (seconds >0){
+
+function myFunction() {
     seconds--;
-  } else {
-    clearInterval(timer);
-  }
+  
+  // if(seconds >60 && seconds <= 70){
+  //   timeBanner.innerHTML = "it is god mode";
+  // }
+  if(seconds >0 && seconds <= 70){
+     timeBanner.innerHTML = "NOW YOU HAVE "+ seconds +" LEFT";
+     console.log("NOW YOU HAVE "+ seconds +" LEFT");
+     if(seconds >60 && seconds <= 70){
+        timeBanner.innerHTML = "it is god mode";
+      }
+     if(seconds > 40 && seconds <= 60){
+      console.log("stage1")
+      intervalCount =  4;
+    } else if(seconds > 20 && seconds <= 40){
+      console.log("stage2")
+      intervalCount = 8;
+    }else if(seconds > 0 && seconds <= 20){
+      console.log("stage3")
+      intervalCount = 14;
+    }
+   } else {
+     clearInterval(timer);
+   }
+
+
+
+
+console.log(seconds);
+
+// setTimeout(function(){
+//   intervalCount =  intervalCount + 4
+// }, 16000);
+
+// setTimeout(function(){
+//   intervalCount =  intervalCount + 8
+// }, 46000)
+
+// setTimeout(function(){
+//   intervalCount =  intervalCount + 12
+// }, 60000)
+// addEventListener("click", function(){
+//   intervalCount =  intervalCount + 6
+// });
+console.log(intervalCount);
+
 }
 
+
 timer = window.setInterval(function() {
-      myFunction();
-    }, 1000);
+  myFunction();
+}, 1000);
 
 
-
-
-// $(window).scroll(function (e){
-//   if ($(document).height() < $(window).scrollTop() + $(window).height() * 10){
-//     document.body.innerHTML += innards;
-//   }
-// });
 
 console.log("LindaisHEREEEEE!!!");
 
@@ -115,37 +157,6 @@ function scrolled(){
 
 }
 setInterval(scrolled, 100);
-
-
-
-// //solution1: make the scroll-down into a larger scale
-let intervalCount = 1;
-let maxInterval = 15;
-let countedInterval = setInterval(()=>{
-  window.scrollBy(0, intervalCount);
-  console.log("This is", intervalCount);
-   if(intervalCount > maxInterval){
-     clearInterval(countedInterval);
-     alert("Game is over now!");
-   }
-   //intervalCount++;
-}, 40)
-
-setTimeout(function(){
-  intervalCount =  intervalCount + 4
-}, 16000);
-
-setTimeout(function(){
-  intervalCount =  intervalCount + 8
-}, 46000)
-
-setTimeout(function(){
-  intervalCount =  intervalCount + 12
-}, 60000)
-// addEventListener("click", function(){
-//   intervalCount =  intervalCount + 6
-// });
-console.log(intervalCount);
 
 
 
