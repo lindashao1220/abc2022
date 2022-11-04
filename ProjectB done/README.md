@@ -5,7 +5,7 @@
 
 
 ## Description🎆 
-![alt text](https://github.com/lindashao1220/abc2022/blob/master/projectA/Screen%20Shot%202022-10-17%20at%2021.39.42.png)
+![alt text](https://github.com/lindashao1220/abc2022/blob/master/ProjectB%20done/froggy.gif)
 
 Inspired by the game Frogger, Jean and I made [pl\<a\>y](https://github.com/lindashao1220/abc2022/raw/master/ProjectB%20done/projectB%20done.zip), a chrome extension-style game. Users play as a frog and try to avoid all the hyperlinks text on the web page to survive. The scrolling will get faster as time goes on, so BE CAREFUL and HAVE FUN.
 
