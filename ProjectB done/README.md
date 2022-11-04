@@ -17,5 +17,5 @@ We get all the \<a\> tags on the web pages and each of their bounding informatio
 THANKS to my partner JEAN and shout-out to LEON, who helped me a loooooot
 
 ## Shortcomings and Compromises😫
-Indicators. Because of the limited time, we haven’t finished the indicators that may give instructions to the readers in the god mode of the game. To be more specific, the function may be like this, there are three blood signs, but whenever it collides, you will lose one blood.  
+Indicators. Because of the limited time, we haven’t finished the indicators that may give instructions to the readers in the god mode of the game. To be more specific, the function may be like this, there are three blood signs, but whenever it collides, you will lose one blood. In this way, the game may be more self-explanatory.
 
