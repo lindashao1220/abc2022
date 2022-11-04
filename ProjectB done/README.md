@@ -1,15 +1,15 @@
-# PROJECT B --- PL<A>Y
+# PROJECT B --- [PL\<A\>Y](https://github.com/lindashao1220/abc2022/raw/master/ProjectB%20done/projectB%20done.zip)
 ## Description🎆 
 ![alt text](https://github.com/lindashao1220/abc2022/blob/master/projectA/Screen%20Shot%202022-10-17%20at%2021.39.42.png)
 
-Inspired by the game Frogger, Jean and I made[pl\<a\>y](https://github.com/lindashao1220/abc2022/raw/master/ProjectB%20done/projectB%20done.zip), a chrome extension-style game. Users play as a frog and try to avoid all the hyperlinks text on the web page to survive. The scrolling will get faster as time goes on, so BE CAREFUL and HAVE FUN.
+Inspired by the game Frogger, Jean and I made [pl\<a\>y](https://github.com/lindashao1220/abc2022/raw/master/ProjectB%20done/projectB%20done.zip), a chrome extension-style game. Users play as a frog and try to avoid all the hyperlinks text on the web page to survive. The scrolling will get faster as time goes on, so BE CAREFUL and HAVE FUN.
 
  
 ## technical explanation🔥
-The continuous scroll.
+1. The continuous scroll.
 First, we connected the game's timer and the page's scrolling speed together. We combine multiple functions together to make it happen. Second, we created two divs and appended the web page's content into them. Then, we make the divs alternate with each other to make the scroll infinite.
 
-Get and apply the bounding client.
+2. Get and apply the bounding client.
 We get all the \<a\> tags on the web pages and each of their bounding information. Then, we apply the numbers and data we collected into formulas to calculate whether the frog collided with the tags.
 
 
