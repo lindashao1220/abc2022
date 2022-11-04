@@ -1,4 +1,9 @@
 # PROJECT B --- [PL\<A\>Y](https://github.com/lindashao1220/abc2022/raw/master/ProjectB%20done/projectB%20done.zip)
+
+
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
+
 ## Description🎆 
 ![alt text](https://github.com/lindashao1220/abc2022/blob/master/projectA/Screen%20Shot%202022-10-17%20at%2021.39.42.png)
 
