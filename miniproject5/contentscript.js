@@ -56,9 +56,9 @@ function mouseUPP(){
       // win1.location.href = url;
       //  //if 
 
-      // setTimeout(function () {
-      //   win1.close();
-      // }, 4000);
+      setTimeout(function () {
+        win1.close();
+      }, 4000);
   }
 }
 
