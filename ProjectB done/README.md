@@ -1,4 +1,4 @@
-# PROJECT B --- [PL\<A\>Y](https://github.com/lindashao1220/abc2022/raw/master/ProjectB%20done/projectB%20done.zip) (downloade it here)
+# PROJECT B --- [PL\<A\>Y](https://github.com/lindashao1220/abc2022/raw/master/ProjectB%20done/projectB%20done.zip) (download it here)
 
 ## Description🐸
 ![alt text](https://github.com/lindashao1220/abc2022/blob/master/ProjectB%20done/froggy.gif)
