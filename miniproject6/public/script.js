@@ -1,11 +1,21 @@
-let btn = document.getElementById("btn");
-let content = document.getElementById("input").value;
+// let btn = document.getElementById("btn");
+// let content = document.getElementById("inPut").value;
 
-btn.addEventListener("click",()=>{
-   console.log(content);
-    window.location.href = "/guess?name=";
-});
+// btn.addEventListener("click",()=>{
+//     alert(content);
+//     console.log(content);
+//     //window.location.href = "/guess?name=";
+// });
 
+
+
+function manySquares(){
+    let content = document.getElementById("input").value;
+    console.log(content);
+    let link = "/guess?name=" + content;
+    console.log(link);
+    window.location.href = link;
+  }
 
 
 
