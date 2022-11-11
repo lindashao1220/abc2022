@@ -14,10 +14,10 @@ app.get('/swimming', (req, res) => {
     res.send('~~~~~~~~~~')
   })
 
-// app.get('/treehouse', (req, res) => {
-//     console.log(req);
-//     res.sendFile(__dirname+"/treehouse/index.html");
-//   })
+app.get('/treehouse', (req, res) => {
+    console.log(req);
+    res.sendFile(__dirname+"/treehouse/index.html");
+  })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
