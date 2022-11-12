@@ -17,7 +17,7 @@ app.use(express.static('public'));
 app.get('/guess', (req, res) => {
     console.log(req.query.name);
     if(req.query.name == "linda"){
-        res.sendFile(__dirname+"/public/notreehouse/index.html");
+        res.sendFile(__dirname+"/public/right/index.html");
     // }else{
     //     res.sendFile(__dirname+"/public/mainpage/index.html");
     }
