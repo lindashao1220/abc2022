@@ -9,13 +9,13 @@
 
 
 
-
+function manySquares(){
     let content = document.getElementById("input").value;
+    console.log(content);
     let link = "/guess?name=" + content;
-    btn.addEventListener("click",()=>{
+    console.log(link);
     window.location.href = link;
-    })
-  
+  }
 
 
 
