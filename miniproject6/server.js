@@ -2,7 +2,8 @@ console.log("hello");
 
 const express = require('express')
 const app = express()
-const port = 3010;
+//const port = 3010;
+const port = process.env.PORT;
 
 app.use(express.static('public'));
 

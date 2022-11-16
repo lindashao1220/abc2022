@@ -4,7 +4,8 @@
   "description": "my miniproject",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node-script.js"
   },
   "author": "linda",
   "license": "ISC",
