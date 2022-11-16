@@ -5,3 +5,22 @@ body{
     text-align: center;
     font-size: 30px;
 }
+
+#btn{
+    height: 30px;
+    background-color: #a1bee3;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+  }
+
+input[type=text]{
+    background-color: rgb(167, 197, 197);
+    padding:5px;
+    font-size:15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height:20px; 
+    width:150px;
+    border-radius: 5px;
+}
