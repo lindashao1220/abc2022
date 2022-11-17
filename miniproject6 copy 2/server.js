@@ -21,18 +21,8 @@ let collectedAnswer = [];
 app.get("/sendAnswer",(req,res)=>{
     let info = req.query;
     let newAn = info.answer;
-    let an;
-    let rightsum = 0;
-    let wrongsum = 0;
-    if (newAn == "Sleeping beauty" || newAn == "Sleeping Beauty" || newAn == "sleeping beauty"){
-      an = "right"
-      rightsum = rightsum + 1;
-    }else{
-      an = "wrong";
-      wrongsum = wrongsum + 1;
-    }
-    collectedAnswer.push(an);
-    // console.log(collectedAnswer);
+    collectedAnswer.push(newAn);
+    console.log(collectedAnswer);
   })
   
   app.get("/getAnswers",(req,res)=>{

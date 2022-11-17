@@ -5,3 +5,13 @@ body{
     text-align: center;
     font-size: 30px;
 }
+
+
+#getData{
+    height: 30px;
+    background-color: #a1bee3;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+  }
