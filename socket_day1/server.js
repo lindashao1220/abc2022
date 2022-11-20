@@ -43,12 +43,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('user disconnected', socket.id);
     });
-
-
-
 });
-
-
 
 
 
