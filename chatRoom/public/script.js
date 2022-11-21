@@ -1,4 +1,5 @@
 console.log("hi");
+var audio = new Audio("audio.mp3");
 
 var socket = io();
 
@@ -39,6 +40,11 @@ socket.on("incoming", (data)=>{
     li.appendChild(p);
     chatbox.appendChild(li);
     chatbox.scrollTop = chatbox.scrollHeight;
+})
+
+socket.on("incoming1",(data)=>{
+    console.log(data);
+    audio.play();
 })
 
 messagebox.addEventListener("keyup", function(event){

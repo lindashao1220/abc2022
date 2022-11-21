@@ -27,6 +27,8 @@ io.on('connection', (socket) => {
 
   //io: send to all the clients
   io.emit("incoming", data);
+
+  socket.broadcast.emit("incoming1", data);
  })
 
 });
