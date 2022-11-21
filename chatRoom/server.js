@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
   console.log('a user connected', socket.id);
 
   //for each we see if it disconnects
- socket.on('disconnection', () => {
+ socket.on('disconnect', () => {
     console.log('user disconnected', socket.id);
  });
 

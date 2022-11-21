@@ -1,6 +1,5 @@
 :root{
-    --borderThickness: 3px;
-
+    --borderThickness: 2px;
 }
 
 p{
@@ -8,11 +7,17 @@ p{
     font-size: 16px;
 }
 
+#iam{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
 body{
+    font-size: larger;
     margin: 0;
-    background-color: rgb(222, 89, 89);
-    font-weight: bold;
-    font-family: sans-serif;
+    background-image: url("background.jpg");
+    background-size: cover;
+    /* font-weight: bold; */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .wrapper{
@@ -24,32 +29,39 @@ body{
 }
 
 .chatwrapper{
-    width:330px;
+    border-style: inset;
+    border-width: 2px;
+    /* border: 10px; */
+    width:380px;
     /* height:400px; */
-    border: var(--borderThickness) solid black;
+    /* border: 2px solid black; */
     border-radius: 15px;
     padding: 15px;
-    box-shadow: 0 0 20px 20px black;
-    background-color: white;
+    box-shadow: 0px 5px 3px 3px rgba(169, 169, 169, 0.822);
+    background-color: rgb(255, 255, 255);
 }
 
 .namebox{
-    border: var(--borderThickness) solid black;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    text-align: right;
+    /* border: var(--borderThickness) solid black; */
+    border-style: groove;
+    border-width: 4px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    text-align: left;
     padding:10px;
     margin-bottom: 5px;
 }
 
 .chatbox{
-    border: var(--borderThickness) solid black;
+    /* border: var(--borderThickness) solid black; */
+    border-style: groove;
+    border-width: 4px;
     margin-bottom: 5px;
     padding:10px;
 }
 
 #chat{
-    height:160px;
+    height:260px;
     overflow:scroll;
     list-style: none;
     padding:0;
@@ -58,20 +70,24 @@ body{
 }
 
 #chat li{
-    margin-bottom: 3px;
+    margin-bottom: 6px;
 }
 
 #chat li:nth-child(odd){
-    background-color: black;
+    background-image:linear-gradient(to right, rgba(192, 152, 226, 0.941) , rgb(197, 54, 161));
     color:white;
 }
 
-#chat li .sender1{
-    color: rgb(83, 133, 198);
+#chat li .sender{
+    color: rgb(101, 45, 184);
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
 .messagebox{
-    border: var(--borderThickness) solid black;
+    /* border: var(--borderThickness) solid black; */
+    border-style: ridge;
+    border-width: 4px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     padding:10px;
@@ -86,9 +102,20 @@ body{
 }
 
 #send{
-    font-size: 16px;
+    font-size: 17px;
+    height: 23px;
+    background-color: #63178b;
+    border: none;
+    border-radius: 6px;
+    color: rgb(255, 252, 255);
 }
 
-
-
-
+input[type=text]{
+    background-color: rgba(251, 234, 251, 0.728);
+    padding:5px;
+    font-size:15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height:12px; 
+    width:280px;
+    border-radius: 5px;
+}
