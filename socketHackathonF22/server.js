@@ -129,6 +129,11 @@ io.on('connection', (socket) => {
   
   
   // boolean 1
+
+  socket.on('textToAllButMe', (msg) => {
+    socket.broadcast.emit("text", {from: socket.id, value: msg.value});
+  });  
+  
   socket.on('boolean1ToAllButMe', (msg) => {
     socket.broadcast.emit("boolean1", {from: socket.id, value: msg.value});
   });  
