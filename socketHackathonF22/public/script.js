@@ -31,19 +31,15 @@ function buttonReceived(){
   }, 500)
 }
 
+
+// // button1ToAllButMe
+// button1ToSingle
+// valueToAllButMe
+
+
+//textToAllButMe
 let textInput0 = document.getElementById("message0");
-let textInput1 = document.getElementById("message1");
-let textInput2 = document.getElementById("message3");
-let textInput3 = document.getElementById("message4");
-let textInput4 = document.getElementById("message5");
-
-// allbutme.addEventListener("click", ()=>{
-//   let text =textInput0.value;
-//   socket.emit("textToAllButMe", {value: text});
-//   textInput0.value = "";
-// })
-
-randomSingle.addEventListener("click", ()=>{
+allbutme.addEventListener("click", ()=>{
   let text =textInput0.value;
   socket.emit("textToAllButMe", {value: text});
   textInput0.value = "";
@@ -67,3 +63,27 @@ socket.on("text", (msg)=>{
 })
 
 
+
+// boolean1ToAllButMe
+let checkBox = document.getElementById("vehicle1");
+checkBox.addEventListener("change", ()=>{
+  let boolean1 = checkBox.checked;
+  //console.log(boolean1);
+  socket.emit("boolean1ToAllButMe", {value: boolean1});
+})
+
+//if i recieve someone press button 1
+socket.on("boolean1", (msg)=>{
+  console.log(msg.value);
+  // audio.play();
+  if(msg.value == true){
+  var src = document.getElementById("check");
+  var img = document.createElement("img");
+  img.src = "check.png";
+  img.style.width = 60+"px";
+  src.appendChild(img);
+  }
+  if(msg.value == false){
+    document.getElementById("check").innerHTML = "";
+    }
+})
