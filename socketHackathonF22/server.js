@@ -117,10 +117,10 @@ io.on('connection', (socket) => {
   
   // single value
   socket.on('valueToAllButMe', (msg) => {
-    socket.broadcast.emit("value", {from: socket.id});
+    socket.broadcast.emit("value", {from: socket.id, value: msg.value});
   });  
   socket.on('valueToAll', (msg) => {
-    io.emit("value", {from: socket.id});
+    io.emit("value", {from: socket.id, value: msg.value});
   });
   socket.on('valueToSingle', (msg) => {
     let id = msg.id;
@@ -129,7 +129,6 @@ io.on('connection', (socket) => {
   
   
   // boolean 1
-
   socket.on('textToAllButMe', (msg) => {
     socket.broadcast.emit("text", {from: socket.id, value: msg.value});
   });  
@@ -184,9 +183,6 @@ io.on('connection', (socket) => {
 
 
 });
-
-
-
 
 
 

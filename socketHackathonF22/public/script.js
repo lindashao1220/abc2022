@@ -32,11 +32,6 @@ function buttonReceived(){
 }
 
 
-// // button1ToAllButMe
-// button1ToSingle
-// valueToAllButMe
-
-
 //textToAllButMe
 let textInput0 = document.getElementById("message0");
 allbutme.addEventListener("click", ()=>{
@@ -64,6 +59,9 @@ socket.on("text", (msg)=>{
 
 
 
+var src = document.getElementById("check");
+var img = document.createElement("img");
+img.src = "check.png";
 // boolean1ToAllButMe
 let checkBox = document.getElementById("vehicle1");
 checkBox.addEventListener("change", ()=>{
@@ -72,14 +70,11 @@ checkBox.addEventListener("change", ()=>{
   socket.emit("boolean1ToAllButMe", {value: boolean1});
 })
 
-//if i recieve someone press button 1
 socket.on("boolean1", (msg)=>{
   console.log(msg.value);
+  // console.log(msg);
   // audio.play();
   if(msg.value == true){
-  var src = document.getElementById("check");
-  var img = document.createElement("img");
-  img.src = "check.png";
   img.style.width = 60+"px";
   src.appendChild(img);
   }
@@ -87,3 +82,21 @@ socket.on("boolean1", (msg)=>{
     document.getElementById("check").innerHTML = "";
     }
 })
+
+
+// valueToAllButMe
+let slider = document.getElementById("slider");
+slider.addEventListener("change", ()=>{
+let rangeInput = document.getElementById("slider").value;
+// console.log(rangeInput);
+socket.emit("valueToAllButMe", {value:rangeInput});
+});
+
+socket.on("value", (msg)=>{
+  console.log(msg.value);
+  let angle = msg.value;
+  img.style.transform = "rotate(" + angle + "deg)";
+})
+
+// button1ToAllButMe
+// button1ToSingle
