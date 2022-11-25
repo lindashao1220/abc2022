@@ -84,6 +84,7 @@ socket.on("boolean1", (msg)=>{
   if(msg.value == true){
   img.style.width = 210+"px";
   src.appendChild(img);
+  document.body.style.backgroundColor = "white";
   }
   if(msg.value == false){
     document.getElementById("check").innerHTML = "";
