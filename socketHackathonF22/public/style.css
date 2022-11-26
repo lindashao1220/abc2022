@@ -34,6 +34,7 @@ input[type='checkbox']:checked {
 }
 
 #check{
+  z-index: 100;
   margin:50px;
   width:150px;
   height:150px;
@@ -53,3 +54,20 @@ input[type='checkbox']:checked {
   align-items: center;
   justify-content: center;
 }
+
+#message0{
+  z-index: 100;
+}
+
+#allbutme{
+  z-index: 100;
+}
+
+#vehicle1{
+  z-index: 100;
+}
+
+#slider{
+  z-index: 100;
+}
+
