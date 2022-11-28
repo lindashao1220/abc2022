@@ -94,7 +94,7 @@ socket.on("boolean1", (msg)=>{
 
 // valueToAllButMe
 let slider = document.getElementById("slider");
-slider.addEventListener("change", ()=>{
+slider.addEventListener("input", ()=>{
 let rangeInput = document.getElementById("slider").value;
 // console.log(rangeInput);
 socket.emit("valueToAllButMe", {value:rangeInput});
