@@ -1,5 +1,5 @@
-// let socket = io("");
-let socket = io("https://abc-socket-hackathon.glitch.me");
+let socket = io("");
+// let socket = io("https://abc-socket-hackathon.glitch.me");
 
 var audio = new Audio("audio.mp3");
 
