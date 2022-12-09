@@ -22,10 +22,122 @@ function setup() {
 }
 
 
+
+let name; 
+socket.on("socketInfo", data=>{
+  name = data.part;
+  console.log("nihaoooo")
+})
+
+
 function draw() {
-// if (show == true){
   image(webCam, 0, 0, 400, 300);
-// }
+  if (name == "nose"){
+    noFill();
+    beginShape();
+    curveVertex(161,101);
+    curveVertex(161,101);
+    curveVertex(162,194);
+    curveVertex(112,271);
+    curveVertex(112,271);
+    strokeWeight(10);
+    endShape();
+    noFill();
+    beginShape();
+    curveVertex(230, 100);
+    curveVertex(230, 100);
+    curveVertex(229, 183);
+    curveVertex(282, 266);
+    curveVertex(282,271);
+    strokeWeight(10);
+    endShape();
+  }else if(name == "lefteye" || name == "righteye"){
+    noFill();
+    beginShape();
+    curveVertex(58,156);
+    curveVertex(58,156);
+    curveVertex(89, 138);
+    curveVertex(121, 126);
+    curveVertex(158, 119);
+    curveVertex(203, 116);
+    curveVertex(250, 121);
+    curveVertex(289, 130);
+    curveVertex(325, 139);
+    curveVertex(325, 139);
+    strokeWeight(10);
+    endShape();
+    
+    noFill();
+    beginShape();
+    curveVertex(65, 212);
+    curveVertex(65, 212);
+    curveVertex(120, 181);
+    curveVertex(184, 167);
+    curveVertex(252, 170);
+    curveVertex(314, 195);
+    curveVertex(275,236);
+    curveVertex(206,251);
+    curveVertex(114,240);
+    curveVertex(65, 212);
+    curveVertex(65, 212);
+    strokeWeight(10);
+    endShape();
+  }else if(name == "mouth"){
+    strokeWeight(7)
+    noFill();
+    beginShape();
+    curveVertex(45, 179);
+    curveVertex(45, 179);
+    curveVertex(92, 164);
+    curveVertex(141, 151);
+    curveVertex(179, 146);
+    curveVertex(198, 158);
+    curveVertex(216, 144);
+    curveVertex(252, 150);
+    curveVertex(296, 164);
+    curveVertex(344,179);
+    curveVertex(380,179);
+    endShape();
+    noFill();
+    beginShape();
+    curveVertex(45, 179);
+    curveVertex(45, 179);
+    curveVertex(93, 207);
+    curveVertex(159, 217);
+    curveVertex(211, 221);
+    curveVertex(267, 210);
+    curveVertex(317, 194);
+    curveVertex(344, 179);
+    curveVertex(344, 179);
+    endShape();
+    noFill();
+    beginShape();
+    curveVertex(45, 179);
+    curveVertex(45, 179);
+    curveVertex(117, 176);
+    curveVertex(187, 179);
+    curveVertex(237, 178);
+    curveVertex(344, 179);
+    curveVertex(344, 179);
+    endShape();  
+  }else if(name == "forehead"){
+    strokeWeight(7)
+    noFill();
+    beginShape();
+    curveVertex(23, 255);
+    curveVertex(23, 255);
+    curveVertex(57, 170);
+    curveVertex(100,124);
+    curveVertex(155, 91);
+    curveVertex(231, 93);
+    curveVertex(304, 134);
+    curveVertex(336, 176);
+    curveVertex(372, 255);
+    curveVertex(372, 255);
+  
+    endShape();
+    
+  }
 }
 
 function takePhoto(){
@@ -73,6 +185,7 @@ function imageToDataUri(img, width, height) {
 
 
 
+
 let myId;
 // document.getElementById("myId").innerText = socket.id;
 
@@ -81,6 +194,7 @@ socket.on("socketInfo", data=>{
     document.getElementById("myId").innerText = data.id;
     document.getElementById("myRoom").innerText = data.roomIdx;
     document.getElementById("myPart").innerText = data.part;
+
 })
 
 
