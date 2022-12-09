@@ -146,13 +146,6 @@ io.on('connection', (socket) => {
     socket.to('room-'+clientObject.roomIdx).emit("newPerson", clientObject)
 
 
-
-    // socket.on("message1", (data)=>{
-    //   // console.log(data);
-    //   socket.broadcast.emit("incoming1", data);
-    //  })
-
-
      
     socket.on("colorChange", newColor=>{
         console.log('------------------------------------');
@@ -185,19 +178,12 @@ io.on('connection', (socket) => {
         rooms[num].parts.nose.imgData = newImg
       }
     
-            // // tell rest of the room about the updated color
-      socket.to('room-'+clientObject.roomIdx).emit("incoming", newImg)
+            // // tell rest of the room about the updated img
+      socket.to('room-'+clientObject.roomIdx).emit(clientObject.part, newImg)
       console.log("connected", connected)
       // console.log("room", rooms)
       console.log(util.inspect(rooms, false, null, true /* enable colors */))
-
-
-
   })
-
-
-   
-
 
     socket.on('disconnect', () => {
         console.log('------------------------------------');
@@ -277,20 +263,5 @@ function getRandomColor() {
     }
     return color;
   }
-
-  
-  
-//  //righteye
-//  socket.on("message", (data)=>{
-//   console.log(data);
-//   socket.broadcast.emit("incoming", data);
-//  })
-
-//  //lefteye
-//  socket.on("message1", (data)=>{
-//   console.log(data);
-//   socket.broadcast.emit("incoming1", data);
-//  })
-
 
   

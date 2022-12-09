@@ -199,12 +199,37 @@ socket.on("socketInfo", data=>{
 
 
 
-socket.on("incoming", (newImg)=>{
+socket.on("lefteye", (newImg)=>{
   console.log(newImg);
   let message = newImg.imgChange;
   console.log(message);
   document.getElementById("recieve1").src = message;
 })
+socket.on("righteye", (newImg)=>{
+  console.log(newImg);
+  let message = newImg.imgChange;
+  console.log(message);
+  document.getElementById("recieve2").src = message;
+})
+socket.on("mouth", (newImg)=>{
+  console.log(newImg);
+  let message = newImg.imgChange;
+  console.log(message);
+  document.getElementById("recieve3").src = message;
+})
+socket.on("forehead", (newImg)=>{
+  console.log(newImg);
+  let message = newImg.imgChange;
+  console.log(message);
+  document.getElementById("recieve4").src = message;
+})
+socket.on("nose", (newImg)=>{
+  console.log(newImg);
+  let message = newImg.imgChange;
+  console.log(message);
+  document.getElementById("recieve5").src = message;
+})
+
 
 function changedColor(e){
     console.log(e.target.value);
