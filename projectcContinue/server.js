@@ -86,7 +86,7 @@ io.on('connection', (socket) => {
     // clientObject.face= getFacePart()
     
     socket.join('room-'+clientObject.roomIdx);
-    socket.emit('socketInfo', clientObject);
+   
 
 
 //method1:
@@ -109,6 +109,7 @@ io.on('connection', (socket) => {
     clientObject["part"]=getPart();
 
     connected.push(clientObject);
+    socket.emit('socketInfo', clientObject);
     // connected[0]["part"]=getPart();
 
 
@@ -144,10 +145,12 @@ io.on('connection', (socket) => {
     // tell others in their room that they have a new member
     socket.to('room-'+clientObject.roomIdx).emit("newPerson", clientObject)
 
-    socket.on("message1", (data)=>{
-      console.log(data);
-      socket.broadcast.emit("incoming1", data);
-     })
+
+
+    // socket.on("message1", (data)=>{
+    //   // console.log(data);
+    //   socket.broadcast.emit("incoming1", data);
+    //  })
 
 
      
@@ -163,6 +166,34 @@ io.on('connection', (socket) => {
         socket.to('room-'+clientObject.roomIdx).emit("newColor", elm)
 
     })
+
+
+    socket.on("imgChange", newImg=>{
+      console.log('------------------------------------');
+      console.log("🙀", socket.id, "changed their img");
+      // update color in connected array
+
+      if( socket.id == rooms[num].parts.lefteye.id){
+        rooms[num].parts.lefteye.imgData = newImg
+      } else if(socket.id == rooms[num].parts.righteye.id){
+        rooms[num].parts.righteye.imgData = newImg
+      }else if(socket.id == rooms[num].parts.mouth.id){
+        rooms[num].parts.mouth.imgData = newImg
+      }else if(socket.id == rooms[num].parts.forehead.id){
+        rooms[num].parts.forehead.imgData = newImg
+      }else if(socket.id == rooms[num].parts.nose.id){
+        rooms[num].parts.nose.imgData = newImg
+      }
+    
+            // // tell rest of the room about the updated color
+      socket.to('room-'+clientObject.roomIdx).emit("incoming", newImg)
+      console.log("connected", connected)
+      // console.log("room", rooms)
+      console.log(util.inspect(rooms, false, null, true /* enable colors */))
+
+
+
+  })
 
 
    
@@ -193,8 +224,6 @@ io.on('connection', (socket) => {
         //   }
         //  }
 
-
-    
           if( socket.id == rooms[roomIdx].parts.lefteye.id){
             console.log("lefteye")
            rooms[roomIdx].parts.lefteye.id = '';
@@ -211,9 +240,7 @@ io.on('connection', (socket) => {
             console.log("nose")
            rooms[roomIdx].parts.nose.id = '';
           }
-         
- 
-
+        
         let memberIdx = rooms[roomIdx].members.findIndex(elm => elm==socket.id);
         rooms[roomIdx].members.splice(memberIdx, 1);
         

@@ -38,32 +38,22 @@ function takePhoto(){
   document.getElementById("output").src = imgData;
 
 
-
-
   //send message to the server
   let sendbutton = document.getElementById("send");
   sendbutton.addEventListener("click", ()=>{
     console.log("clicked");
         //send name message to the server(package up the data)
-        let data ={message1: imgData}
+        let data ={imgChange: imgData}
         //send the message to the server
-        socket.emit('message1', data)
+        socket.emit('imgChange', data)
         console.log(data)
 })
-
-
 }
 
 
 let btn = document.getElementById("button");
 btn.addEventListener("click", ()=>{
   takePhoto();
-})
-
-socket.on("incoming1", (data)=>{
-  console.log(data);
-  let message = data.message1;
-  document.getElementById("recieve1").src = message;
 })
 
 
@@ -90,9 +80,17 @@ socket.on("socketInfo", data=>{
     myId = data.id;
     document.getElementById("myId").innerText = data.id;
     document.getElementById("myRoom").innerText = data.roomIdx;
-    document.getElementById("myPart").innerText = data.face;
+    document.getElementById("myPart").innerText = data.part;
 })
 
+
+
+socket.on("incoming", (newImg)=>{
+  console.log(newImg);
+  let message = newImg.imgChange;
+  console.log(message);
+  document.getElementById("recieve1").src = message;
+})
 
 function changedColor(e){
     console.log(e.target.value);
@@ -100,8 +98,9 @@ function changedColor(e){
 
     // inform room:
     socket.emit("colorChange", e.target.value);
-
 }
+
+
 
 socket.on("onlineInYourRoom", inMyRoom=>{
     console.log("inMyRoom", inMyRoom)
@@ -144,79 +143,3 @@ socket.on("personLeft", id=>{
     let elm = document.getElementById(id)
     elm.parentNode.removeChild(elm);
 })
-
-
-
-
-
-
-
-// //right eye
-// let cnv;
-// var webCam;
-// var webCamImage;
-// var snap;
-// var slider;
-// // let show = true;
-
-// var socket = io();
-
-// function setup() {
-//   let canvas = createCanvas(400, 400);
-//   canvas.parent("container");
-//   canvas.id("cnv");
-  
-//   webCam = createCapture(VIDEO);
-//   webCam.size(100,80);
-//   webCam.position(100,50);
-//   webCam.hide();
-// }
-
-
-// function draw() {
-// // if (show == true){
-//   image(webCam, 0, 0, 400, 300);
-// // }
-// }
-
-// function takePhoto(){
-//   // saveFrames('selfie', 'png', 1, 1);
-//   console.log("hiiii");
-//   image(webCam, 0, 0, 400, 300);
-//   // show = false;
-//   let imgData = imageToDataUri(document.getElementsByTagName("video")[0], 400/3, 300/3);
-//   console.log(imgData);
-//   document.getElementById("output").src = imgData;
-
-//   //send message to the server
-//   let sendbutton = document.getElementById("send");
-//   sendbutton.addEventListener("click", ()=>{
-//     console.log("clicked");
-//         //send name message to the server(package up the data)
-//         let data ={message: imgData}
-//         //send the message to the server
-//         socket.emit('message', data)
-//         console.log(data)
-// })
-// }
-
-
-// let btn = document.getElementById("button");
-// btn.addEventListener("click", ()=>{
-//   takePhoto();
-// })
-
-
-// function imageToDataUri(img, width, height) {
-//   // create an off-screen canvas
-//   var canvas = document.createElement('canvas'),
-//       ctx = canvas.getContext('2d');
-//   // set its dimension to target size
-//   canvas.width = width;
-//   canvas.height = height;
-//   // draw source image into the off-screen canvas:
-//   ctx.drawImage(img, 0, 0, width, height);
-//   // encode image to data-uri with base64 version of compressed image
-//   return canvas.toDataURL();
-// }
-
