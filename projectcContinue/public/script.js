@@ -16,8 +16,8 @@ function setup() {
   canvas.id("cnv");
   
   webCam = createCapture(VIDEO);
-  webCam.size(100,80);
-  webCam.position(100,50);
+  // webCam.size(200,80);
+  // webCam.position(0,0);
   webCam.hide();
 }
 
@@ -136,16 +136,16 @@ function draw() {
     curveVertex(372, 255);
   
     endShape();
-    
   }
 }
+
 
 function takePhoto(){
   // saveFrames('selfie', 'png', 1, 1);
   console.log("hiiii");
   image(webCam, 0, 0, 400, 300);
   // show = false;
-  let imgData = imageToDataUri(document.getElementsByTagName("video")[0], 400/3, 300/3);
+  let imgData = imageToDataUri(document.getElementsByTagName("video")[0], 400/2, 300/2);
   console.log(imgData);
   document.getElementById("output").src = imgData;
 

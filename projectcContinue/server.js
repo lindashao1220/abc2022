@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
-const { Server } = require("../projectcContinue/node_modules/socket.io/dist");
+const { Server } = require("../projectcOneStepAway/node_modules/socket.io/dist");
 const io = new Server(server);
 
 
@@ -177,9 +177,12 @@ io.on('connection', (socket) => {
       }else if(socket.id == rooms[num].parts.nose.id){
         rooms[num].parts.nose.imgData = newImg
       }
+
     
-            // // tell rest of the room about the updated img
-      socket.to('room-'+clientObject.roomIdx).emit(clientObject.part, newImg)
+      // // tell rest of the room about the updated img
+      //QUESTIONNN:  ??not emitting to the person itself???
+      // socket.to('room-'+clientObject.roomIdx).emit(clientObject.part, newImg)
+      io.to('room-'+clientObject.roomIdx).emit(clientObject.part, newImg)
       console.log("connected", connected)
       // console.log("room", rooms)
       console.log(util.inspect(rooms, false, null, true /* enable colors */))
