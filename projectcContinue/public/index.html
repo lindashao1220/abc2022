@@ -13,6 +13,29 @@
 </head>
 
 <body>
+
+
+
+    <div id="container2">
+        <span id="text1"></span>
+        <span id="text2"></span>
+    </div>
+    
+    <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 255 -140" />
+            </filter>
+        </defs>
+    </svg>
+
+
+
+
+
     <p>my id: <span id="myId"></span></p>
     <p>my room: <span id="myRoom"></span></p>
     <p>my face part: <span id="myPart"></span></p>
@@ -24,17 +47,25 @@
 
 <div id="biggest">
 
+
 <div class="flex-container">
+
+    <div class="bigWrapper">
     <div class = "float-child" id="wrapper1">
     <div id="container"></div>
 
     </div>
     <div class = "float-child" id="wrapper2">
         <div id = "inside">
-        <button id="button">snap</button>
-        <button id="send">Send</button>
-        <img id="output" src="" alt="">
+        <button id="button" class="button-49">snap</button>
+        <button id="send" class="button-49">Send</button>
         </div>
+    </div>
+
+    <div>
+    <img id="output" src="" alt="">
+    </div>
+    
     </div>
 
     <div class = "flex-child">
@@ -42,9 +73,7 @@
         <div><img id="recieve4" src="forehead.png" alt=""></div>
         <div><img id="recieve2" src="righteye.png" alt=""></div>
         <div><img id="recieve1" src="lefteye.png" alt=""></div>
-
-        <div id="wrap"><img id="recieve5" src="nose.png" alt=""></div>
-
+        <div><img id="recieve5" src="nose.png" alt=""></div>
         <div><img id="recieve3" src="mouse.png" alt=""></div>
     </div>
 </div> 

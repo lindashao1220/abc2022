@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>take a picture</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="libs/p5.js"></script>
+</head>
+
+<body>
+    <p>my id: <span id="myId"></span></p>
+    <p>my room: <span id="myRoom"></span></p>
+    <p>my face part: <span id="myPart"></span></p>
+    <p>online in your room:</p>
+    <ul id="onlineList">
+        
+    </ul>
+    <p id="p1"></p>
+
+<div id="biggest">
+
+
+<div class="flex-container">
+
+    <div class="bigWrapper">
+    <div class = "float-child" id="wrapper1">
+    <div id="container"></div>
+
+    </div>
+    <div class = "float-child" id="wrapper2">
+        <div id = "inside">
+        <button id="button" class="button-55">snap</button>
+        <button id="send" class="button-55">Send</button>
+        </div>
+    </div>
+
+    <div>
+    <img id="output" src="" alt="">
+    </div>
+    
+    </div>
+
+    <div class = "flex-child">
+        <!-- <img id="recieve" src="" alt=""> -->
+        <div><img id="recieve4" src="forehead.png" alt=""></div>
+        <div><img id="recieve2" src="righteye.png" alt=""></div>
+        <div><img id="recieve1" src="lefteye.png" alt=""></div>
+
+        <div id="wrap"><img id="recieve5" src="nose.png" alt=""></div>
+
+        <div><img id="recieve3" src="mouse.png" alt=""></div>
+    </div>
+</div> 
+
+</div>
+
+</body>
+
+<script type="text/javascript" src="script.js"></script>
+
+</html>
