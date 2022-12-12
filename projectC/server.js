@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
-const { Server } = require("../projectcVersion1Change1/node_modules/socket.io/dist");
+const { Server } = require("../projectC/node_modules/socket.io/dist");
 const io = new Server(server);
 
 
