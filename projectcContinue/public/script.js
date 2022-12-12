@@ -183,15 +183,6 @@ function imageToDataUri(img, width, height) {
 }
 
 
-
-
-
-
-
-
-
-
-
 let myId;
 // document.getElementById("myId").innerText = socket.id;
 
@@ -210,7 +201,6 @@ socket.on("socketInfo", data=>{
   "a picture",
   "of your " + data.part,
   ":)")   
-
 })
 
 
@@ -247,13 +237,13 @@ socket.on("nose", (newImg)=>{
 })
 
 
-function changedColor(e){
-    console.log(e.target.value);
-    document.getElementById(myId).style.backgroundColor = e.target.value;
+// function changedColor(e){
+//     console.log(e.target.value);
+//     document.getElementById(myId).style.backgroundColor = e.target.value;
 
-    // inform room:
-    socket.emit("colorChange", e.target.value);
-}
+//     // inform room:
+//     socket.emit("colorChange", e.target.value);
+// }
 
 
 

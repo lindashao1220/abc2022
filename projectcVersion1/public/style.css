@@ -19,6 +19,7 @@
 }
 #recieve5{
     width: 200px;
+    height: 70px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -129,15 +130,15 @@
 .button-49,
 .button-49:after {
   width: 100px;
-  height: 25px;
+  height: 40px;
   line-height: 78px;
   font-size: 20px;
   font-family: 'Bebas Neue', sans-serif;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 5%, #000000 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
-  box-shadow: 6px 0px 0px #00E6F6;
+  box-shadow: 6px 0px 0px #909293ec;
   outline: transparent;
   position: relative;
   user-select: none;
@@ -160,8 +161,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  background: linear-gradient(45deg, transparent 3%, #909293ec 3%, #909293ec 5%, #000000 5%);
+  text-shadow: -3px -3px 0px #47f42c, 3px 3px 0px #909293ec;
   clip-path: var(--slice-0);
 }
 
@@ -221,7 +222,7 @@
   .button-49,
   .button-49:after {
     width: 100px;
-    height: 40px;
+    height: 45px;
     line-height: 35px;
   }
 }
@@ -264,3 +265,8 @@ body {
 
     user-select: none;
 }
+
+/* body {
+  background-image: url("background.png");
+  background-size: 100%;
+} */

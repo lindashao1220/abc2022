@@ -31,7 +31,11 @@ socket.on("socketInfo", data=>{
 
 
 function draw() {
+  push();
+  translate(width,0);
+  scale(-1, 1);
   image(webCam, 0, 0, 400, 300);
+  pop();
   if (name == "nose"){
     noFill();
     beginShape();
@@ -197,9 +201,9 @@ let myId;
 
 socket.on("socketInfo", data=>{
     myId = data.id;
-    document.getElementById("myId").innerText = data.id;
-    document.getElementById("myRoom").innerText = data.roomIdx;
-    document.getElementById("myPart").innerText = data.part;
+    // document.getElementById("myId").innerText = data.id;
+    // document.getElementById("myRoom").innerText = data.roomIdx;
+    // document.getElementById("myPart").innerText = data.part;
 
   texts.push("PHOTO",
   "COLLAGE",
@@ -257,26 +261,26 @@ function changedColor(e){
 
 
 
-socket.on("onlineInYourRoom", inMyRoom=>{
-    console.log("inMyRoom", inMyRoom)
-    inMyRoom.forEach(member=>{
-        let li = document.createElement("li");
-        li.innerText = member.id;
-        li.id = member.id;
-        li.style.backgroundColor = member.color;
-        if(member.id == myId){
-            li.innerText += " (you)";
-            let colorPicker = document.createElement("input");
-            colorPicker.setAttribute("type", "color");
-            colorPicker.setAttribute("value", member.color);
-            colorPicker.className = "colorPicker";
-            colorPicker.addEventListener("change", changedColor);
-            li.appendChild(colorPicker);
-        }
-        document.getElementById("onlineList").appendChild(li);
-    })
+// socket.on("onlineInYourRoom", inMyRoom=>{
+//     console.log("inMyRoom", inMyRoom)
+//     inMyRoom.forEach(member=>{
+//         let li = document.createElement("li");
+//         li.innerText = member.id;
+//         li.id = member.id;
+//         li.style.backgroundColor = member.color;
+//         if(member.id == myId){
+//             li.innerText += " (you)";
+//             let colorPicker = document.createElement("input");
+//             colorPicker.setAttribute("type", "color");
+//             colorPicker.setAttribute("value", member.color);
+//             colorPicker.className = "colorPicker";
+//             colorPicker.addEventListener("change", changedColor);
+//             li.appendChild(colorPicker);
+//         }
+//         document.getElementById("onlineList").appendChild(li);
+//     })
    
-})
+// })
 
 
 

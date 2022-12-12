@@ -75,8 +75,7 @@ io.on('connection', (socket) => {
     let clientObject = {
         id: socket.id,
         roomIdx: allocateRoomIdxFor(socket.id),
-        color: getRandomColor(),
-        // part: getPart() // in the room　　which part was assigned to my id?
+        // color: getRandomColor()
     }
 
 
@@ -147,18 +146,18 @@ io.on('connection', (socket) => {
 
 
      
-    socket.on("colorChange", newColor=>{
-        console.log('------------------------------------');
-        console.log("✨", socket.id, "changed their color", newColor);
-        // update color in connected array
-        let elm = connected.find(el=>el.id == socket.id)
-        elm.color = newColor;
-        console.log("connected", connected)
+    // socket.on("colorChange", newColor=>{
+    //     console.log('------------------------------------');
+    //     console.log("✨", socket.id, "changed their color", newColor);
+    //     // update color in connected array
+    //     let elm = connected.find(el=>el.id == socket.id)
+    //     elm.color = newColor;
+    //     console.log("connected", connected)
 
-        // tell rest of the room about the updated color
-        socket.to('room-'+clientObject.roomIdx).emit("newColor", elm)
+    //     // tell rest of the room about the updated color
+    //     socket.to('room-'+clientObject.roomIdx).emit("newColor", elm)
 
-    })
+    // })
 
 
     socket.on("imgChange", newImg=>{
@@ -257,14 +256,14 @@ server.listen(3000, () => {
 });
 
 
-//return random color
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
+// //return random color
+// function getRandomColor() {
+//     var letters = '0123456789ABCDEF';
+//     var color = '#';
+//     for (var i = 0; i < 6; i++) {
+//       color += letters[Math.floor(Math.random() * 16)];
+//     }
+//     return color;
+//   }
 
   
