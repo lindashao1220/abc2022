@@ -13,12 +13,14 @@ const texts =[];
 function setup() {
   let canvas = createCanvas(400, 400);
   canvas.parent("container");
+  //
   canvas.id("cnv");
   
   webCam = createCapture(VIDEO);
   // webCam.size(200,80);
   // webCam.position(0,0);
-  webCam.hide();
+  // webCam.hide();
+  webCam.parent("receive3Wrapper");
 }
 
 
@@ -210,8 +212,7 @@ socket.on("socketInfo", data=>{
   "照片",
   "拼贴",
   "Please",
-  "take",
-  "a picture",
+  "take a picture",
   "of your " + data.part,
   ":)")   
 
