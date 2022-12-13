@@ -58,6 +58,12 @@
   cursor: pointer;
 } */
 
+/* #whole{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+} */
+
 
 #recieve1{
     position: relative;
@@ -142,6 +148,7 @@
 }
 
 #biggest{
+  margin-top:40px;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -270,7 +277,7 @@ body {
 
 #container2{
     position: absolute;
-    margin: auto;
+    margin-top: 40px;
     width: 100vw;
     top: 0;
     bottom: 0;
