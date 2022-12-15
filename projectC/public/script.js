@@ -226,8 +226,7 @@ socket.on("socketInfo", data=>{
   "照片",
   "拼贴",
   "Please",
-  "take",
-  "a picture",
+  "take a picture",
   "of your " + data.part,
   ":)")   
 

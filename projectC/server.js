@@ -135,12 +135,6 @@ io.on('connection', (socket) => {
 
 
 
-
-
-
-
-
-
     // tell socket who else is in their room
     socket.emit('onlineInYourRoom', rooms[clientObject.roomIdx].members.map(id=>connected.find(elm=>elm.id == id)));
 
@@ -148,10 +142,6 @@ io.on('connection', (socket) => {
 
     // tell others in their room that they have a new member
     socket.to('room-'+clientObject.roomIdx).emit("newPerson", clientObject)
-
-
-
-
 
 
 
