@@ -22,12 +22,13 @@ var webCam;
 var webCamImage;
 var snap;
 var slider;
+let zoom = 4;
 // let show = true;
 
 const texts =[];
 
 function setup() {
-  let canvas = createCanvas(400, 400);
+  let canvas = createCanvas(400, 300);
   canvas.parent("container");
   canvas.id("cnv");
   
@@ -43,6 +44,21 @@ let name;
 socket.on("socketInfo", data=>{
   name = data.part;
   console.log("nihaoooo")
+  if (name == "nose"){
+    zoom = 4;
+  }else if(name == "lefteye" || name == "righteye"){
+    zoom = 4;
+
+    
+  
+  }else if(name == "mouth"){
+    zoom = 4;
+
+
+  }else if(name == "forehead"){
+    zoom = 2;
+
+  }
 })
 
 
@@ -50,7 +66,13 @@ function draw() {
   push();
   translate(width,0);
   scale(-1, 1);
-  image(webCam, 0, 0, 400, 300);
+  
+  let camW = 400*zoom;
+  let camH = 300*zoom;
+  let xOffset = (camW-width)/2;
+  let yOffset = (camH-height)/2;
+  // background("red")
+  image(webCam, 0-xOffset, 0-yOffset, camW, camH);
   pop();
   if (name == "nose"){
     noFill();
@@ -163,9 +185,17 @@ function draw() {
 function takePhoto(){
   // saveFrames('selfie', 'png', 1, 1);
   console.log("hiiii");
-  image(webCam, 0, 0, 400, 300);
+  // image(webCam, 0, 0, 400, 300);
+  let camW = 400*zoom;
+  let camH = 300*zoom;
+  let xOffset = (camW-width)/2;
+  let yOffset = (camH-height)/2;
+  // background("red")
+  image(webCam, 0-xOffset, 0-yOffset, camW, camH);
   // show = false;
-  let imgData = imageToDataUri(document.getElementsByTagName("video")[0], 400/2, 300/2);
+  // let imgData = imageToDataUri(document.getElementsByTagName("video")[0], 400/2, 300/2);
+  let imgData = imageToDataUri(document.getElementById("cnv"), 400/2, 300/2);
+
   console.log(imgData);
   document.getElementById("output").src = imgData;
 
@@ -238,7 +268,7 @@ socket.on("lefteye", (newImg)=>{
   let message = newImg.imgChange;
   console.log(message);
   document.getElementById("recieve1").src = message;
-
+  
 
 })
 
@@ -248,7 +278,6 @@ socket.on("righteye", (newImg)=>{
   console.log(message);
   document.getElementById("recieve2").src = message;
 
-
 })
 
 socket.on("mouth", (newImg)=>{
@@ -256,7 +285,6 @@ socket.on("mouth", (newImg)=>{
   let message = newImg.imgChange;
   console.log(message);
   document.getElementById("recieve3").src = message;
-
 })
 
 
