@@ -191,7 +191,9 @@ function takePhoto(){
   let xOffset = (camW-width)/2;
   let yOffset = (camH-height)/2;
   // background("red")
-  image(webCam, 0-xOffset, 0-yOffset, camW, camH);
+
+  // image(webCam, 0-xOffset, 0-yOffset, camW, camH);
+  
   // show = false;
   // let imgData = imageToDataUri(document.getElementsByTagName("video")[0], 400/2, 300/2);
   let imgData = imageToDataUri(document.getElementById("cnv"), 400/2, 300/2);

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "phase1-ml5",
+			"path": ".."
+		},
+		{
+			"name": "models",
+			"path": "../../Face-Detection-JavaScript-master/models"
+		}
+	],
+	"settings": {}
+}
