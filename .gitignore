@@ -190,4 +190,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Firebase Hosting
+.firebaserc
+firebase-debug.log
+
 # End of https://www.gitignore.io/api/vim,osx,node,windows
