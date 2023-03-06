@@ -194,4 +194,14 @@ $RECYCLE.BIN/
 .firebaserc
 firebase-debug.log
 
+firebase-adminsdk-*.json
+
+*.env
+
+firebase.json
+firebase.rules
+
+/build
+/dist
+
 # End of https://www.gitignore.io/api/vim,osx,node,windows
