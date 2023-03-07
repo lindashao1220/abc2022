@@ -2,10 +2,10 @@
   "name": "projectc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node node-script.js"
+    "start": "node server.js"
   },
   "author": "linda",
   "license": "ISC",
@@ -16,5 +16,8 @@
     "firebase-admin": "^11.5.0",
     "socket.io": "^4.5.4",
     "util": "^0.12.5"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
