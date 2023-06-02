@@ -1,4 +1,4 @@
-console.log('ddddd')
+console.log('ddddd');
 var circle = document.getElementById("circle");
 let up = document.getElementById("upBtn");
 let down = document.getElementById("downBtn");
